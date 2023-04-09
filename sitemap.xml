@@ -38,25 +38,16 @@
   </url>
   
   <url>
-    <loc>https://www.yoshidacloud.fun/tags/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yoshidacloud.fun/box/gallery/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.yoshidacloud.fun/box/animation/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yoshidacloud.fun/social/fcircle/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
@@ -74,16 +65,7 @@
   </url>
   
   <url>
-    <loc>https://www.yoshidacloud.fun/personal/about/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yoshidacloud.fun/life/games/index.html</loc>
+    <loc>https://www.yoshidacloud.fun/box/gallery/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
@@ -93,6 +75,24 @@
   
   <url>
     <loc>https://www.yoshidacloud.fun/life/movies/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yoshidacloud.fun/tags/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yoshidacloud.fun/life/games/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
@@ -119,6 +119,24 @@
   </url>
   
   <url>
+    <loc>https://www.yoshidacloud.fun/social/link/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yoshidacloud.fun/personal/about/index.html</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yoshidacloud.fun/personal/love/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
@@ -129,24 +147,6 @@
   
   <url>
     <loc>https://www.yoshidacloud.fun/site/census/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yoshidacloud.fun/social/link/index.html</loc>
-    
-    <lastmod>2023-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yoshidacloud.fun/social/fcircle/index.html</loc>
     
     <lastmod>2023-03-01</lastmod>
     
@@ -207,13 +207,6 @@
   </url>
   
   <url>
-    <loc>https://www.yoshidacloud.fun/tags/hexo/</loc>
-    <lastmod>2023-04-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.yoshidacloud.fun/tags/Markdown/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -222,6 +215,13 @@
   
   <url>
     <loc>https://www.yoshidacloud.fun/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
+    <lastmod>2023-04-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yoshidacloud.fun/tags/hexo/</loc>
     <lastmod>2023-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
