@@ -6,7 +6,7 @@
   <link href="https://www.yoshidacloud.fun/atom.xml" rel="self"/>
   
   <link href="https://www.yoshidacloud.fun/"/>
-  <updated>2023-05-07T01:50:20.393Z</updated>
+  <updated>2023-05-07T01:50:31.245Z</updated>
   <id>https://www.yoshidacloud.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.yoshidacloud.fun/posts/e88e0438.html"/>
     <id>https://www.yoshidacloud.fun/posts/e88e0438.html</id>
     <published>2023-05-07T01:44:28.000Z</published>
-    <updated>2023-05-07T01:50:20.393Z</updated>
+    <updated>2023-05-07T01:50:31.245Z</updated>
     
     <content type="html"><![CDATA[<h1>解决win11更新后任务栏透明失效(Translucent TB/trayS)</h1><blockquote><p>Windows11不知哪个版本更新后导致Translucent TB的任务栏透明功能失效了，尝试过很多方法:</p><p>​修改注册表</p><p>​TaskbarTools</p><p>​Translucent TB</p><p>等等，最终还是选择了Start11，但是由于是破解版和与其他软件兼容性的原因，依然达不到以前的效果。</p></blockquote><p>==本文章参考了一下资料：==</p><ol><li><a href="https://www.yuque.com/jasonluke/kvg142/pxbqn2oadgpzepz3?singleDoc#">https://www.yuque.com/jasonluke/kvg142/pxbqn2oadgpzepz3?singleDoc#</a></li><li><a href="https://www.bilibili.com/read/cv22300526">解决win11更新后任务栏透明失效（Translucent TB/trayS） - 哔哩哔哩 (bilibili.com)</a></li></ol><h2 id="解决方法">解决方法</h2><p>使用工具<a href="https://github.com/thebookisclosed/ViVe/">ViVe</a>修改旧版本的工具栏:</p><p><img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070916239.png" alt="image.png"></p><p><a href="https://github.com/thebookisclosed/ViVe/releases/">https://github.com/thebookisclosed/ViVe/releases/</a></p><h2 id="使用">使用</h2><ol><li>点击上面的链接去项目的发布页面下载:</li></ol><p>​<img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070924996.png" alt="image-20230507092433069"></p><ol start="2"><li><p>使用管理员模式打开终端</p><p><img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070928946.png" alt="image-20230507092800812"></p></li><li><p>进入下载解压好的工具目录</p></li></ol><p>​<img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070930454.png" alt="image-20230507093034469"></p><ol start="4"><li><p>执行命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\ViVeTool.exe /disable /id:26008830 /variant:2</span><br></pre></td></tr></table></figure></li></ol><p><img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070933279.png" alt="image-20230507093337719"></p><ol start="5"><li>如下图成功后就可以重启正常使用任务栏透明工具了</li></ol><p>​<img src="https://raw.githubusercontent.com/nemuigaki/imgs/main/Notes/202305070935897.png" alt="image-20230507093537976"></p><h2 id="其他">其他</h2><ol><li>==An error occurred while setting feature configurations in the Runtime store (拒绝访问。)==</li></ol><p>出现这样的问题，原因是没有权限，需要以管理员运行终端。</p><ol start="2"><li>关闭win11 新任务栏 State</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\ViVeTool.exe /disable /id:26008830 /variant:2</span><br></pre></td></tr></table></figure><ol start="3"><li>开启win11 新任务栏 State</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\ViVeTool.exe /enable /id:26008830 /variant:2</span><br></pre></td></tr></table></figure>]]></content>
     
