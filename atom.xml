@@ -6,7 +6,7 @@
   <link href="https://www.yoshidacloud.fun/atom.xml" rel="self"/>
   
   <link href="https://www.yoshidacloud.fun/"/>
-  <updated>2023-12-08T01:20:12.988Z</updated>
+  <updated>2023-11-24T13:08:03.545Z</updated>
   <id>https://www.yoshidacloud.fun/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>windows mklink</title>
-    <link href="https://www.yoshidacloud.fun/posts/e23da862.html"/>
-    <id>https://www.yoshidacloud.fun/posts/e23da862.html</id>
-    <published>2023-11-24T14:03:35.000Z</published>
-    <updated>2023-12-08T01:20:12.988Z</updated>
-    
-    <content type="html"><![CDATA[<h1>解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接）</h1><blockquote><p><a href="https://blog.walterlv.com/post/problems-of-mklink.html">解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接） - walterlv</a></p></blockquote><p>通过 mklink 命令可以创建文件或文件夹的链接，而这种链接跟快捷方式是不一样的。然而我们还可能会遇到其使用过程中的一些坑，本文将整理这些坑并提供解决方法。</p><hr><h2 id="背景介绍：mklink">背景介绍：mklink</h2><p><code>mklink</code> 可以像创建快捷方式一样建立文件或文件夹的链接，但不同于快捷方式的是，<code>mklink</code> 创建的链接绝大多数程序都不会认为那是一个链接，而是一个实实在在的文件或文件夹。</p><p>例如，为 <code>D:\OneDrive\Foo</code> 文件夹创建链接到 <code>D:\Foo</code>，那么 <code>D:\OneDrive\Foo</code> 中有一个 <code>.git</code> 文件时，绝大多数程序都会以为 <code>D:\Foo</code> 中也存在 <code>.git</code> 文件，而且文件内容一模一样。</p><p><code>mklink</code> 可以创建符号链接、硬链接和目录链接。在 <code>cmd</code> 中输入 <code>mklink</code> 即可看到以下这样的帮助信息。</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span> C:\Users\lvyi&gt;mklink 创建符号链接。 MKLINK<span class="meta"> [[/D] | [/H] | [/J]] Link Target         /D      创建目录符号链接。默认为文件                符号链接。        /H      创建硬链接而非符号链接。        /J      创建目录联接。        Link    指定新的符号链接名称。        Target  指定新链接引用的路径                (相对或绝对)。 </span></span><br></pre></td></tr></table></figure><p>具体的使用不是本文的重点，可以阅读本文末尾的参考资料了解，这里只给出他们之间的大体区别。</p><table><thead><tr><th>使用方式</th><th>适用于</th><th>快捷方式小箭头</th></tr></thead><tbody><tr><td>不带参数</td><td>文件</td><td>有</td></tr><tr><td>/D</td><td>文件夹</td><td>有</td></tr><tr><td>/J</td><td>文件夹</td><td>有</td></tr><tr><td>/H</td><td>文件</td><td>无</td></tr></tbody></table><p>上面的表格顺序，从上到下的行为从越来越像快捷方式到越来越像两个独立的文件夹。</p><h2 id="0x01-坑：PowerShell-中没有-mklink-命令">0x01 坑：PowerShell 中没有 mklink 命令</h2><p>是的，PowerShell 中就是中没有 mklink 命令。如果要在 powershell 中使用 mklink，那么得先敲 <code>cmd</code> 进入 <code>cmd</code> 之后再使用 <code>mklink</code> 命令。</p><p>如果你是一个重度强迫症患者，那么可以编写一个 powershell 的扩展函数来实现：<a href="https://learn-powershell.net/2013/07/16/creating-a-symbolic-link-using-powershell/">Creating a Symbolic Link using PowerShell - Learn Powershell - Achieve More</a>。</p><h2 id="0x02-坑：权限">0x02 坑：权限</h2><p>默认我们的用户账户是 <code>Administrators</code> 组的，会继承它的权限设定。正常情况下，我们使用 <code>mklink</code> 是可以成功执行的。但如果文件系统的设置比较奇怪或者重装过系统，那么可能出现没有权限的错误。</p><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span><span class="number">2</span> C:\Users\lvyi&gt;mklink /D D:\Foo D:\OneDrive\Foo 你没有足够的权限执行此操作。 </span><br></pre></td></tr></table></figure><p>这时，使用管理员权限启动 <code>cmd</code> 是最简单的做法。不过也可以考虑在 <code>本地安全策略（secpol.msc）\本地策略\用户权利分配</code> 中添加当前用户。</p><hr><p><strong>参考链接</strong></p><ul><li><a href="https://www.sinosky.org/mklink-cmd-useful-tips.html">活用 MKLINK 命令保护、节省你的硬盘 - SinoSky</a></li><li><a href="http://blog.csdn.net/NotBack/article/details/73604292">关于mklink的/D /J 区别 - CSDN博客</a></li><li><a href="https://learn-powershell.net/2013/07/16/creating-a-symbolic-link-using-powershell/">Creating a Symbolic Link using PowerShell - Learn Powershell - Achieve More</a></li><li><a href="https://answers.microsoft.com/zh-hans/windows/forum/windows_10-files-winpc/win10/8df12869-96f4-4cd1-a914-355e908a6015">win10 无法运行mklink命令同步onedrive和电脑数据 - Microsoft Community</a></li><li><a href="http://blog.csdn.net/u011583025/article/details/52908508">Win10下执行mklink提示你没有足够权限执行此操作 - CSDN博客</a></li></ul>]]></content>
-    
-    
-    <summary type="html">解决 mklink 使用中的各种坑（硬链接，软链接/符号链接，目录链接）</summary>
-    
-    
-    
-    <category term="演示" scheme="https://www.yoshidacloud.fun/categories/%E6%BC%94%E7%A4%BA/"/>
-    
-    
-    <category term="windows" scheme="https://www.yoshidacloud.fun/tags/windows/"/>
-    
-    <category term="mklink" scheme="https://www.yoshidacloud.fun/tags/mklink/"/>
-    
-  </entry>
   
   <entry>
     <title>windows mklink</title>
