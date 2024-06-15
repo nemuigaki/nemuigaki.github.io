@@ -126,11 +126,11 @@
     <category term="Java" scheme="https://www.sadalsuud.cn/categories/Java/"/>
     
     
-    <category term="Netty" scheme="https://www.sadalsuud.cn/tags/Netty/"/>
-    
     <category term="Redisson" scheme="https://www.sadalsuud.cn/tags/Redisson/"/>
     
     <category term="WatchDog" scheme="https://www.sadalsuud.cn/tags/WatchDog/"/>
+    
+    <category term="Netty" scheme="https://www.sadalsuud.cn/tags/Netty/"/>
     
   </entry>
   
@@ -177,6 +177,29 @@
     <category term="GitHub" scheme="https://www.sadalsuud.cn/tags/GitHub/"/>
     
     <category term="API" scheme="https://www.sadalsuud.cn/tags/API/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows旋转屏幕后鼠标方向没变的解决实例</title>
+    <link href="https://www.sadalsuud.cn/posts/25658fff.html"/>
+    <id>https://www.sadalsuud.cn/posts/25658fff.html</id>
+    <published>2024-06-12T12:47:38.000Z</published>
+    <updated>2024-06-15T03:47:07.480Z</updated>
+    
+    <content type="html"><![CDATA[<h1>Windows旋转屏幕后鼠标方向没变的解决实例</h1><p>如果你在将Windows外接显示器更改显示方向后，出现鼠标并未旋转仍然保持原显示方向的情况时，可以尝试以下方式进行解决：</p><ol><li>尝试切换分辨率，切换后再修改回来确认是否可以修正</li><li>重启设备再次确认情况</li><li>打开NVIDIA Panel查看显示器状态是否正确并刷新设置</li></ol>]]></content>
+    
+    
+    <summary type="html">本文提供Windows外接显示器更改显示方向后，鼠标并未旋转仍然保持原显示方向的问题解决方法</summary>
+    
+    
+    
+    <category term="演示" scheme="https://www.sadalsuud.cn/categories/%E6%BC%94%E7%A4%BA/"/>
+    
+    
+    <category term="Windows" scheme="https://www.sadalsuud.cn/tags/Windows/"/>
+    
+    <category term="屏幕方向改变" scheme="https://www.sadalsuud.cn/tags/%E5%B1%8F%E5%B9%95%E6%96%B9%E5%90%91%E6%94%B9%E5%8F%98/"/>
     
   </entry>
   
